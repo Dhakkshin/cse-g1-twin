@@ -1,9 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const path = require('path');
 const quizRoutes = require('./routes/quizRoutes');
+const connectDB = require('./config/database');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -18,6 +20,9 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+// Connect to MongoDB
+connectDB();
 
 // Routes
 app.use('/quiz', quizRoutes);
