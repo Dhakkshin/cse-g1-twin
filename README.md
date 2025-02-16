@@ -1,6 +1,6 @@
 # CSE Twin Quiz Application
 
-A fun interactive web application that helps CSE G1 students find their personality matches among classmates.
+A fun interactive web application that helps CSE G1 students find their personality matches among classmates through a dynamic branching quiz system.
 
 ## Project Structure
 
@@ -26,11 +26,32 @@ cse-twin
 
 ## Features
 
-- Interactive personality quiz
+- Adaptive branching quiz system
+- Personality-based question paths
+- Dynamic result matching based on responses
+- Character-specific result pages
+- Mobile-responsive interface
 - Real-time question navigation
-- Result matching with classmates
-- Responsive design for all devices
-- Sign-up form for new character additions
+
+## How It Works
+
+The quiz uses a branching logic system where:
+
+1. Each answer leads to a specific next question
+2. Questions adapt based on previous responses
+3. Results match you with a specific CSE G1 character
+4. Multiple paths can lead to different character matches
+
+## Character Categories
+
+The quiz can match you with various CSE G1 personalities including:
+
+- The Driving Enthusiast
+- The Cricket Pro
+- The Social Media Star
+- The Backend Developer
+- The Classification Expert
+- And more!
 
 ## Setup Instructions
 
@@ -60,7 +81,6 @@ The application will be available at `http://localhost:3000`
 - Body Parser: Request parsing middleware
 - Express Session: Session management
 - Cookie Parser: Cookie handling
-- SQLite3: Database management
 
 ## Development
 
@@ -68,4 +88,8 @@ To run the application in development mode with auto-reload:
 
 ```
 npm run dev
+```
+
+```
+
 ```
