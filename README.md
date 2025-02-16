@@ -1,32 +1,48 @@
-# My Express Backend
+# CSE Twin Quiz Application
 
-This is a simple Express.js backend project that handles form submissions from a frontend HTML page.
+A fun interactive web application that helps CSE G1 students find their personality matches among classmates.
 
 ## Project Structure
 
 ```
-my-express-backend
+cse-twin
 ├── src
 │   ├── app.js                # Entry point of the application
 │   ├── controllers           # Contains controller files
-│   │   └── formController.js # Handles form submission logic
-│   ├── routes                # Contains route files
-│   │   └── formRoutes.js     # Defines application routes
-│   └── views                 # Contains frontend files
-│       └── home.html         # HTML structure for the frontend
-├── package.json              # NPM configuration file
-└── README.md                 # Project documentation
+│   │   └── quizController.js # Handles quiz logic
+│   ├── routes               # Contains route files
+│   │   └── quizRoutes.js    # Defines quiz routes
+│   ├── views                # Contains frontend files
+│   │   └── home.html        # Main quiz interface
+│   └── data                 # Contains application data
+│       └── questions.json   # Quiz questions
+├── public                   # Static assets
+│   ├── styles              # CSS files
+│   ├── scripts             # Frontend JavaScript
+│   └── images              # Image assets
+├── package.json            # NPM configuration file
+└── README.md               # Project documentation
 ```
+
+## Features
+
+- Interactive personality quiz
+- Real-time question navigation
+- Result matching with classmates
+- Responsive design for all devices
+- Sign-up form for new character additions
 
 ## Setup Instructions
 
 1. **Clone the repository:**
+
    ```
    git clone <repository-url>
-   cd my-express-backend
+   cd cse-twin
    ```
 
 2. **Install dependencies:**
+
    ```
    npm install
    ```
@@ -36,11 +52,20 @@ my-express-backend
    npm start
    ```
 
-## Usage
-
-- Navigate to `http://localhost:3000` in your web browser to access the form.
-- Fill out the form and submit it to see the response handled by the backend.
+The application will be available at `http://localhost:3000`
 
 ## Dependencies
 
-- Express: A minimal and flexible Node.js web application framework.
+- Express.js: Web application framework
+- Body Parser: Request parsing middleware
+- Express Session: Session management
+- Cookie Parser: Cookie handling
+- SQLite3: Database management
+
+## Development
+
+To run the application in development mode with auto-reload:
+
+```
+npm run dev
+```

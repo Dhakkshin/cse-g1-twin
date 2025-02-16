@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 top: quizSection.offsetTop - 20,
                 behavior: 'smooth'
             });
-            loadQuestions(); // Load questions when quiz is shown
+            loadQuestions(); 
         });
     }
 
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 top: quizSection.offsetTop - 20,
                 behavior: 'smooth'
             });
-            loadQuestions(); // Load questions when quiz is shown
+            loadQuestions(); 
         });
     }
 
