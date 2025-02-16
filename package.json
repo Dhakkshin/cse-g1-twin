@@ -1,0 +1,16 @@
+{
+  "name": "my-express-backend",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "express-session": "^1.17.3",
+    "sqlite3": "^5.1.4",
+    "cookie-parser": "^1.4.6"
+  }
+}

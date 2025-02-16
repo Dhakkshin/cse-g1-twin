@@ -1,0 +1,76 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "Do you love driving?",
+      "options": [
+        { "value": "a", "text": "Yes", "next": 2 },
+        { "value": "b", "text": "No", "next": 5 }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Were you a former cricketer?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Raj" },
+        { "value": "b", "text": "No", "next": 3 }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Do you occasionally make Instagram reels under the name Vignesh?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Anandkumar" },
+        { "value": "b", "text": "No", "next": 4 }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "Were you formerly a 'clan man' but now stripped of titles?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Rohith" },
+        { "value": "b", "text": "No", "next": 9 }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Are you a backend god?",
+      "options": [
+        { "value": "a", "text": "Yes", "next": 6 },
+        { "value": "b", "text": "No", "next": 7 }
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Do you classify people often?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Akash" },
+        { "value": "b", "text": "No", "result": "Kishore" }
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Do you sometimes classify people and also have polarizing opinions?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Karthik" },
+        { "value": "b", "text": "No", "next": 8 }
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Do you possess a golden citizen card?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Karthikeyan" },
+        { "value": "b", "text": "No", "error": "Character not found!" }
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Are you an expert in everything, including AI/ML?",
+      "options": [
+        { "value": "a", "text": "Yes", "result": "Anandkumar" },
+        { "value": "b", "text": "No", "error": "Character not found!" }
+      ]
+    }
+  ]
+}

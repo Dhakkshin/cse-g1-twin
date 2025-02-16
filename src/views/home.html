@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which CSE G1 Character Are You?</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/scripts/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="/images/header-image.jpg" alt="CSE G1 Banner" class="header-image">
+            <div class="header-text">
+                <h1>Discover Your CSE G1 Twin!</h1>
+                <p>Find out which of your classmates shares your unique personality traits in this fun, interactive quiz.</p>
+                <button id="header-cta" class="primary-button animate-pulse">
+                    Start Personality Match
+                    <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="header-gradient"></div>
+    </header>
+
+    <main class="three-column-layout">
+        <!-- Left Column -->
+        <aside class="sidebar left-sidebar">
+            <section class="instructions">
+                <h2>Instructions</h2>
+                <p>The quiz consists of a few questions. Select the option that best describes you for each question. Submit your answers to see your result.</p>
+                <ol>
+                    <li>Read each question carefully.</li>
+                    <li>Select one answer for each question.</li>
+                    <li>Click on the submit button at the end.</li>
+                </ol>
+            </section>
+            <section class="fun-facts">
+                <h2>Fun Facts</h2>
+                <p>Did you know? The CSE G1 class has collectively spent over 1,000 hours playing video games!</p>
+            </section>
+        </aside>
+
+        <!-- Middle Column -->
+        <div class="main-content">
+            <!-- Quiz Section (Initially Hidden) -->
+            <section id="quiz-section" class="quiz-section hidden">
+                
+                <!-- Quiz Form Section -->
+                <form id="quiz-form" class="quiz-form">
+                    <h2>Quiz Questions</h2>
+                    <div id="current-question"></div>
+                    <div class="quiz-navigation">
+                        <button type="button" id="next-button" class="primary-button" disabled>
+                            Next Question
+                            <svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Sign Up Section -->
+            <section class="signup-section">
+                <!-- Signup Intro -->
+                <div class="signup-intro">
+                    <h2>Be Part of the Quiz!</h2>
+                    <p>Want to be featured as one of the characters that others can match with?</p>
+                    <p>Share your unique personality traits and become part of our growing community!</p>
+                    <p>(Technically this form is just for show, it wont work 🙃)</p>
+                    <button id="show-signup" class="primary-button">I'm Interested!</button>
+                </div>
+
+                <!-- Signup Form (Initially Hidden) -->
+                <div id="signup-form-section" class="hidden">
+                    <h2>Join Our Character List</h2>
+                    <p>Tell us about yourself and become a character option in our quiz!</p>
+                    <p>(Technically this form is just for show, it wont work 🙃)</p>
+                    <form id="signup-form" action="form/submit-form" method="post">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Enter your full name"
+                                required 
+                                maxlength="50" 
+                                pattern="[A-Za-z\s]+"
+                            />
+                            <small class="error" id="name-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input 
+                                type="number" 
+                                id="age" 
+                                name="age" 
+                                placeholder="Your age"
+                                required 
+                                min="10" 
+                                max="120"
+                            />
+                            <small class="error" id="age-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="your.email@example.com"
+                                required
+                            />
+                            <small class="error" id="email-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="unique-details">What Makes You Unique?</label>
+                            <textarea 
+                                id="unique-details" 
+                                name="unique-details" 
+                                placeholder="Share your unique traits, habits, or characteristics..."
+                                required
+                            ></textarea>
+                            <small class="error" id="details-error"></small>
+                        </div>
+
+                        <button type="submit">Submit Application</button>
+                    </form>
+                    <div id="form-feedback"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <aside class="sidebar right-sidebar">
+            <section class="leaderboard">
+                <h2>Leaderboard</h2>
+                <ul>
+                    <li>1. Alex - 95%</li>
+                    <li>2. Sam - 90%</li>
+                    <li>3. Taylor - 88%</li>
+                </ul>
+            </section>
+        </aside>
+    </main>
+
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <footer>
+        <p>&copy; 2024 CSE G1 Quiz | <a href="https://cseg1.com">Our Website</a></p>
+    </footer>
+</body>
+</html>
