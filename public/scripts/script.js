@@ -307,3 +307,51 @@ function restartQuiz() {
     navigation.style.display = 'flex';
     displayQuestion(currentQuestionId);
 }
+
+// Form submission handler
+document.getElementById('signup-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        uniqueDetails: document.getElementById('unique-details').value
+    };
+
+    try {
+        const response = await fetch('/quiz/submit-profile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+        const formSection = document.getElementById('signup-form-section');
+        const feedback = document.getElementById('form-feedback');
+        
+        if (result.success) {
+            // Hide the form
+            formSection.innerHTML = `
+                <div class="submission-success">
+                    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                        <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                        <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                    </svg>
+                    <h3>Thank You!</h3>
+                    <p>${result.message}</p>
+                    <button onclick="location.reload()" class="primary-button">Back to Quiz</button>
+                </div>
+            `;
+        } else {
+            feedback.className = 'error';
+            feedback.textContent = result.message;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('form-feedback').className = 'error';
+        document.getElementById('form-feedback').textContent = 
+            'There was an error submitting your form. Please try again later.';
+    }
+});

@@ -10,4 +10,7 @@ router.get('/questions', quizController.getQuestions);
 router.get('/leaderboard', leaderboardController.getLeaderboard);
 router.post('/update-score', leaderboardController.updateScore);
 
+// Form submission route
+router.post('/submit-profile', require('../controllers/formController').submitProfile);
+
 module.exports = router;

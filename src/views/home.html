@@ -87,7 +87,7 @@
                     <h2>Join Our Character List</h2>
                     <p>Tell us about yourself and become a character option in our quiz!</p>
                     <!-- <p>(Technically this form is just for show, it wont work 🙃)</p> -->
-                    <form id="signup-form" action="form/submit-form" method="post">
+                    <form id="signup-form">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input 
@@ -100,20 +100,6 @@
                                 pattern="[A-Za-z\s]+"
                             />
                             <small class="error" id="name-error"></small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="age">Age</label>
-                            <input 
-                                type="number" 
-                                id="age" 
-                                name="age" 
-                                placeholder="Your age"
-                                required 
-                                min="10" 
-                                max="120"
-                            />
-                            <small class="error" id="age-error"></small>
                         </div>
 
                         <div class="form-group">
